@@ -1,0 +1,3 @@
+# Rewrite rules
+RewriteEngine on
+RewriteRule (.*) ./public/$1

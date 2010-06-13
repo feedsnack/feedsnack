@@ -1,0 +1,19 @@
+SetEnv APPLICATION_ENV development
+
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_HOST} !^feedsnack.localhost$
+RewriteCond %{HTTP_HOST} !^api.feedsnack.localhost$
+RewriteCond %{HTTP_HOST} !^dev.feedsnack.localhost$
+RewriteCond %{HTTP_HOST} !^jobs.feedsnack.localhost$
+RewriteCond %{HTTP_HOST} !^help.feedsnack.localhost$
+RewriteCond %{HTTP_HOST} !^blog.feedsnack.localhost$
+RewriteCond %{HTTP_HOST} !^jobs.feedsnack.localhost$
+RewriteCond %{HTTP_HOST} !^status.feedsnack.localhost$
+RewriteRule ^(.*)$ http://feedsnack.localhost/$1 [L,R=301]
+
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+RewriteRule ^.*$ index.php [NC,L]   

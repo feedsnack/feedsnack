@@ -1,0 +1,21 @@
+
+			<div id="return" class="column span-24 last">
+				<span>
+				<?php echo 
+				$this->navigation()
+					->breadcrumbs()
+					->setLinkLast(false)
+          			->setSeparator(' &#9654;' . PHP_EOL); 
+          		?>
+				&#9650; <a href="#wrapper" title="<?php echo $this->translate('Return To Top') ?>"><?php echo $this->translate('Return') ?></a>
+				</span>
+			</div>
+			<div id="sub-menu" class="column span-16 last">
+				<ul>
+					<li><a href="<?php echo $this->url(array(), 'default', true) ?>" title="<?php echo $this->translate('Home') ?>"><?php echo $this->translate('Home') ?></a></li>
+				</ul>
+			</div>
+			<div id="copyright" class="column span-24 last">
+				<p>Developed by <a href="http://wiki.github.com/feedsnack/feedsnack/">Feedsnack</a></p>
+			</div>
+		
